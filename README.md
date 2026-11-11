@@ -24,6 +24,6 @@
 
 ## 联系方式
 
-- **Telegram：** [@xuzongbin001](https://t.me/xuzongbin001)
+- **Telegram：** [@bandao555](https://t.me/bandao555)
 
 如果该项目对你有参考价值，欢迎 Star 并关注后续更新。
