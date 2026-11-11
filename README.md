@@ -22,8 +22,8 @@
 
 ## 产品截图与玩法说明
 ![现金场](Screencut/现金场.png)  ![桌面](Screencut/桌面.png) 
-![Jackpot](Screencut/Jackpot.png) 
-![个人中心](Screencut/个人中心.png) 
+![Jackpot](Screencut/Jackpot.png) ![个人中心](Screencut/个人中心.png) 
+![后台](Screencut/后台.png) ![后台](Screencut/后台1.png) 
 
 ## 联系方式
 
