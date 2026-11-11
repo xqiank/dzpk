@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200" preserveAspectRatio="xMaxYMid meet" width="100%" height="100%">
+  <defs>
+    <!-- 卡片右上角极柔和深邃墨绿光晕（绝不干扰文字与中央图表） -->
+    <radialGradient id="statsCornerGlow" cx="570" cy="50" r="220" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#14422b" stop-opacity="0.32" />
+      <stop offset="50%" stop-color="#0b2418" stop-opacity="0.12" />
+      <stop offset="90%" stop-color="#161817" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- 扑克卡牌极微弱半透明金属光泽 -->
+    <linearGradient id="cardOutlineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="50%" stop-color="#a7f3d0" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02" />
+    </linearGradient>
+
+    <!-- 微弱金色轨迹光 -->
+    <linearGradient id="waveGoldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd700" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#ffd700" stop-opacity="0.02" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. 纯净深色底色与右上角微光 -->
+  <rect width="600" height="200" fill="#161817" />
+  <rect width="600" height="200" fill="url(#statsCornerGlow)" />
+
+  <!-- 2. 紧凑型右侧专属水印：严格限制在 x=490 ~ 590 极右侧边缘，中央与数据区 100% 纯净无遮挡 -->
+  <g transform="translate(548, 105)">
+    <!-- 极细 HUD 科技分度圆环 -->
+    <circle cx="0" cy="0" r="62" fill="none" stroke="rgba(255, 255, 255, 0.035)" stroke-width="1.2" />
+    <circle cx="0" cy="0" r="50" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1" stroke-dasharray="2, 6" />
+    <circle cx="0" cy="0" r="38" fill="none" stroke="rgba(0, 229, 117, 0.08)" stroke-width="1" />
+
+    <!-- 顶部极短高光装饰弧（仅限于右侧圆环上，不延伸到卡片中区） -->
+    <path d="M -25,-43 A 50 50 0 0 1 35,-35" fill="none" stroke="#00e575" stroke-width="2" stroke-linecap="round" opacity="0.4" />
+
+    <!-- 水印双扑克牌（A♠ & A♥），超轻半透明线性设计 -->
+    <g transform="rotate(-12)">
+      <!-- 牌 1: 底牌 A♥ -->
+      <g transform="translate(-10, -2) rotate(-10)">
+        <rect x="-18" y="-28" width="36" height="56" rx="4"
+              fill="rgba(255, 255, 255, 0.015)"
+              stroke="url(#cardOutlineGrad)"
+              stroke-width="1.2" />
+        <!-- 牌面红桃微弱水印 -->
+        <path d="M 0,-5 C -4,-12 -12,-7 -12,0 C -12,6 -3,11 0,16 C 3,11 12,6 12,0 C 12,-7 4,-12 0,-5 Z"
+              fill="rgba(255, 99, 71, 0.09)" />
+      </g>
+
+      <!-- 牌 2: 顶牌 A♠ -->
+      <g transform="translate(8, 4) rotate(8)">
+        <rect x="-19" y="-30" width="38" height="60" rx="4"
+              fill="rgba(255, 255, 255, 0.02)"
+              stroke="rgba(0, 229, 117, 0.16)"
+              stroke-width="1.4" />
+        <!-- 牌面黑桃微弱水印 -->
+        <g transform="translate(0, 1)">
+          <path d="M 0,-14 C -7,-7 -15,-1 -15,7 C -15,13 -10,17 -4,16 C -1,15 0,12 0,12 C 0,12 1,15 4,16 C 10,17 15,13 15,7 C 15,-1 7,-7 0,-14 Z"
+                fill="rgba(255, 255, 255, 0.08)" />
+          <path d="M -1,11 L -3,20 C 0,21 0,21 3,20 L 1,11 Z"
+                fill="rgba(255, 255, 255, 0.08)" />
+        </g>
+        <text x="-14" y="-20" font-family="system-ui, sans-serif" font-size="7" font-weight="900" fill="#a7f3d0" opacity="0.3">A</text>
+      </g>
+
+      <!-- 微弱数据波形线 -->
+      <path d="M -35,26 Q -12,12 8,28 T 42,18"
+            fill="none"
+            stroke="url(#waveGoldGrad)"
+            stroke-width="1.4"
+            stroke-dasharray="3, 2" />
+    </g>
+  </g>
+</svg>

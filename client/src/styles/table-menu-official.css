@@ -1,0 +1,72 @@
+/* 牌桌快捷菜单：官方 TableRoomMenu 侧边抽屉（side-drawer-container.menu-drawer）
+   规则数值全部取自 PokerTable-DSJpRdmT.css 原样，仅加 .tm-official 作用域前缀 */
+
+.tm-official .menu-real-img { width:22px;height:22px;object-fit:contain;display:block }
+.tm-official .menu-real-btn-icon { width:18px;height:18px;object-fit:contain;display:inline-block;vertical-align:-2px;margin-right:6px }
+.tm-official .drawer-modal-backdrop { position:fixed;inset:0;background:#0000007a;z-index:120;display:flex;align-items:stretch;justify-content:flex-start;overscroll-behavior:contain }
+.tm-official .side-drawer-container { width:88%;max-width:375px;min-width:310px;height:100%;padding-top:max(calc(env(safe-area-inset-top,0px) + 38px),48px);box-sizing:border-box;background:#0a1a15e0!important;backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-right:1px solid rgba(84,226,167,.32);display:flex;flex-direction:column;box-shadow:16px 0 48px #000000eb,0 0 24px #10b9811a;overflow:hidden;-webkit-user-select:none;user-select:none }
+.tm-official .drawer-top-nav { display:flex;justify-content:space-between;align-items:center;padding:10px 12px;background:#0e261ebf;border-bottom:1px solid rgba(84,226,167,.15) }
+.tm-official .drawer-back-btn { background:#10b98129;border:1px solid rgba(52,211,153,.38);border-radius:6px;padding:3px 9px;color:#a7f3d0;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s }
+.tm-official .drawer-back-btn:hover { background:#10b98147;border-color:#6ee7b799;color:#fff }
+.tm-official .drawer-title-group { text-align:center }
+.tm-official .drawer-title-group strong { font-size:14px;color:#fff;display:block }
+.tm-official .drawer-sub-id { font-size:10px;color:#738a9c }
+.tm-official .drawer-scroll-content { flex:1;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:12px 12px 28px;display:flex;flex-direction:column;gap:12px }
+.tm-official .drawer-scroll-content>* { flex-shrink:0 }
+html:not(.is-tg-miniapp) .tm-official .side-drawer-container { padding-top:16px }
+.tm-official .leave-btn { background:#3c1518;color:#ff6b72;border:1px solid rgba(255,107,114,.3) }
+.tm-official .menu-drawer { background:#090c10 }
+.tm-official .menu-scroll-area { flex:1;overflow-y:auto;padding:8px 10px;display:flex;flex-direction:column;gap:10px }
+.tm-official .menu-section-group { display:flex;flex-direction:column;gap:5px }
+.tm-official .menu-section-title { font-size:10px;font-weight:700;color:#a8df13;padding:0 4px 2px;letter-spacing:.5px }
+.tm-official .menu-nav-item { display:flex;align-items:center;justify-content:space-between;padding:8px 10px;background:#11161f;border:1px solid rgba(255,255,255,.06);border-radius:7px;color:#e6edf5;cursor:pointer;transition:all .15s ease;text-align:left }
+.tm-official .menu-nav-item:hover, .tm-official .menu-nav-item:active { background:#182230;border-color:#ffd87559;transform:translate(2px) }
+.tm-official .menu-nav-item-left { display:flex;align-items:center;gap:9px }
+.tm-official .menu-item-icon { font-size:15px;line-height:1;width:22px;text-align:center;flex-shrink:0 }
+.tm-official .menu-item-texts { display:flex;flex-direction:column;gap:1px }
+.tm-official .menu-item-texts b { font-size:12px;color:#f0f4f8;font-weight:600 }
+.tm-official .menu-item-texts small { font-size:9.5px;color:#738a9c;line-height:1.2 }
+.tm-official .menu-nav-arrow { font-size:14px;color:#4f6377;transition:color .15s;flex-shrink:0;padding-left:4px }
+.tm-official .menu-nav-item:hover .menu-nav-arrow { color:#ffd875 }
+.tm-official .menu-nav-item.situp-item { background:#0f1d28;border-color:#5bc4ff26 }
+.tm-official .menu-nav-item.situp-item:hover { background:#152c3c;border-color:#5bc4ff66 }
+.tm-official .menu-nav-item.spectator-info-item { background:#0e1922a6;border-color:#5bc4ff26;cursor:default }
+.tm-official .menu-nav-item.spectator-info-item:hover { background:#0e1922a6;border-color:#5bc4ff26;transform:none }
+.tm-official .status-chip-spectator { font-size:10px;color:#5bc4ff;background:#5bc4ff1f;border:1px solid rgba(91,196,255,.3);padding:2px 6px;border-radius:4px;font-weight:600;flex-shrink:0 }
+.tm-official .drawer-bottom-action.menu-bottom-action { padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:#080e0bf2;border-top:1px solid rgba(0,229,117,.15);flex-shrink:0;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px) }
+.tm-official .drawer-wallet-bar { display:flex;align-items:center;justify-content:space-between;padding:7px 11px;background:linear-gradient(135deg,#0e2e22cc,#091c15e6);border:1px solid rgba(0,229,117,.28);border-radius:8px;margin-bottom:9px;box-shadow:0 2px 10px #00000059 }
+.tm-official .drawer-wallet-left { display:flex;align-items:center;gap:10px }
+.tm-official .wallet-icon-wrap { position:relative;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 35% 30%,#00e57540,#061a12f2);border:1px solid rgba(0,229,117,.45);border-radius:8px;color:#00e575;box-shadow:0 2px 8px #00e57526 }
+.tm-official .wallet-svg { width:17px;height:17px }
+.tm-official .wallet-usdt-badge { position:absolute;right:-3px;bottom:-3px;width:13px;height:13px;background:#00e575;color:#041a12;font-size:9px;font-weight:900;border-radius:50%;display:flex;align-items:center;justify-content:center;line-height:1;box-shadow:0 1px 3px #00000080 }
+.tm-official .drawer-wallet-info { display:flex;flex-direction:column }
+.tm-official .drawer-wallet-label { font-size:10px;color:#8da499;letter-spacing:.3px;line-height:1.2 }
+.tm-official .drawer-wallet-val { font-size:15px;font-weight:800;color:#f3dc98;font-family:DIN Alternate,-apple-system,sans-serif;letter-spacing:.5px;line-height:1.2;text-shadow:0 0 10px rgba(243,220,152,.25) }
+.tm-official .drawer-wallet-recharge-btn { display:inline-flex;align-items:center;gap:3px;padding:4px 10px;background:linear-gradient(135deg,#00e57538,#00e5751a);border:1px solid rgba(0,229,117,.5);border-radius:14px;color:#00e575;font-size:11px;font-weight:700;cursor:pointer;transition:all .18s ease }
+.tm-official .drawer-wallet-recharge-btn:hover { background:#00e57552;border-color:#00e575;color:#fff;box-shadow:0 0 10px #00e57559 }
+.tm-official .drawer-wallet-recharge-btn:active { transform:scale(.96) }
+.tm-official .drawer-wallet-recharge-btn .plus-icon { font-size:13px;line-height:1 }
+.tm-official .drawer-leave-room-btn { width:100%;padding:10px 0;border-radius:8px;font-size:13px;font-weight:700;letter-spacing:.5px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:7px;transition:all .18s ease;box-sizing:border-box }
+.tm-official .drawer-leave-room-btn.leave-btn { background:linear-gradient(180deg,#143e2ee6,#0b261bf5);border:1px solid rgba(0,229,117,.45);color:#e6f8ee;box-shadow:0 4px 14px #00000073,inset 0 1px #ffffff1a }
+.tm-official .drawer-leave-room-btn.leave-btn:hover { background:linear-gradient(180deg,#1c503cf5,#0f3022fa);border-color:#00e575bf;color:#00e575;box-shadow:0 4px 18px #00e57547 }
+.tm-official .drawer-leave-room-btn.leave-btn:active { transform:scale(.98) }
+.tm-official .drawer-leave-room-btn.leave-btn .menu-real-btn-icon { width:16px;height:16px;filter:drop-shadow(0 0 4px rgba(0,229,117,.45)) }
+.tm-official .drawer-leave-room-btn.dissolve-btn { margin-top:8px;background:linear-gradient(180deg,#3e12168c,#260a0db8);border:1px solid rgba(239,68,68,.38);color:#f87171;box-shadow:0 3px 10px #00000059,inset 0 1px #ffffff0d }
+.tm-official .drawer-leave-room-btn.dissolve-btn:hover { background:linear-gradient(180deg,#52161cbf,#340c11d9);border-color:#ef4444b3;color:#fca5a5;box-shadow:0 4px 14px #ef444447 }
+.tm-official .drawer-leave-room-btn.dissolve-btn:active { transform:scale(.98) }
+.tm-official .drawer-leave-room-btn.dissolve-btn .menu-real-btn-icon { width:16px;height:16px;filter:drop-shadow(0 0 4px rgba(239,68,68,.45)) }
+
+/* 官方抽屉进出场（drawer-fade） */
+.tm-official .side-drawer-container { animation: tmDrawerIn .28s cubic-bezier(.2, .9, .3, 1) both; }
+@keyframes tmDrawerIn { from { transform: translate(-100%); opacity: 0 } to { transform: none; opacity: 1 } }
+/* 官方 corner close 圆钮（dialog-close-btn） */
+.tm-official .drawer-corner-close {
+  width: 30px; height: 30px; border-radius: 50%; background: rgba(16, 42, 33, .85);
+  border: 1px solid rgba(212, 175, 55, .32); color: #d6e4dd;
+  display: flex; align-items: center; justify-content: center; cursor: pointer;
+  line-height: 1; padding: 0; box-sizing: border-box; flex-shrink: 0;
+  transition: all .18s cubic-bezier(.2, .8, .2, 1);
+}
+.tm-official .drawer-corner-close:active { background: rgba(24, 62, 48, .95); border-color: rgba(255, 216, 117, .65); color: #fff; transform: scale(.92); }
+/* 移动端抽屉顶部内边距 16（官方 html:not(.is-tg-miniapp) 分支） */
+html:not(.is-tg-miniapp) .tm-official .side-drawer-container { padding-top: 16px; }

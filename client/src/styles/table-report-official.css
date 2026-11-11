@@ -1,0 +1,79 @@
+/* 房间报表：官方 TableReportDrawer（report-drawer-media + 玩家表 + 围观区 + 三页签）
+   规则数值取自 PokerTable-DSJpRdmT.css 原样，仅加 .report-official 作用域前缀 */
+
+.report-official .drawer-modal-backdrop { position:fixed;inset:0;background:#0000007a;z-index:120;display:flex;align-items:stretch;justify-content:flex-start;overscroll-behavior:contain }
+.report-official .side-drawer-container { width:88%;max-width:375px;min-width:310px;height:100%;padding-top:max(calc(env(safe-area-inset-top,0px) + 38px),48px);box-sizing:border-box;background:#0a1a15e0!important;backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-right:1px solid rgba(84,226,167,.32);display:flex;flex-direction:column;box-shadow:16px 0 48px #000000eb,0 0 24px #10b9811a;overflow:hidden;-webkit-user-select:none;user-select:none }
+.report-official .side-drawer-container.report-drawer-media { width:88%;max-width:375px;min-width:310px;height:100%;padding-top:max(calc(env(safe-area-inset-top,0px) + 38px),48px);box-sizing:border-box;background:#0a1a15e6!important;backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border-right:1px solid rgba(212,175,55,.3);display:flex;flex-direction:column;box-shadow:16px 0 48px #000000eb,0 0 24px #10b9811a;overflow:hidden;-webkit-user-select:none;user-select:none }
+.report-official .report-header-card { flex:0 0 auto;padding:16px 14px 12px;display:flex;flex-direction:column;gap:8px;background:#0c1e178c;border-bottom:1px solid rgba(84,226,167,.15) }
+.report-official .report-title-line { display:flex;align-items:center;justify-content:space-between }
+.report-official .report-room-name { font-size:16px;font-weight:700;color:#fff;letter-spacing:.5px }
+.report-official .report-hash-box { display:flex;align-items:center;gap:4px;font-size:13px;color:#6c8c99;cursor:pointer;padding:2px 6px;border-radius:4px;transition:all .15s ease }
+.report-official .report-hash-box:hover { background:#54e2a714;color:#a7f3d0 }
+.report-official .copy-icon-svg { color:#6c8c99;flex-shrink:0 }
+.report-official .report-meta-line { display:flex;align-items:center;justify-content:space-between;font-size:13px;color:#7b9ba8 }
+.report-official .meta-left-group { display:flex;align-items:center;gap:16px }
+.report-official .usdt-chip-icon-badge { display:flex;align-items:center;gap:5px;color:#e2e8f0;font-weight:600 }
+.report-official .insurance-badge { display:flex;align-items:center;gap:4px;color:#7b9ba8 }
+.report-official .elapsed-timer-badge { color:#7b9ba8;font-family:monospace;font-size:13px }
+.report-official .report-tab-pane { flex:1 1 0;min-height:0;display:flex;flex-direction:column;overflow:hidden }
+.report-official .report-tab-pane.empty-pane { align-items:center;justify-content:center;padding:30px 24px;text-align:center;gap:12px }
+.report-official .tab-empty-shield { width:60px;height:60px;border-radius:50%;background:#10b9811f;border:1px solid rgba(84,226,167,.25);display:flex;align-items:center;justify-content:center;color:#6ee7b7 }
+.report-official .tab-empty-shield.redpacket-icon { background:#ef44441f;border-color:#ef444440;color:#fca5a5 }
+.report-official .report-tab-pane.empty-pane strong { font-size:15px;color:#f1f5f9 }
+.report-official .report-tab-pane.empty-pane p { margin:0;font-size:12.5px;color:#7b9ba8;line-height:1.5;max-width:260px }
+.report-official .report-players-section { flex:1 1 0;min-height:180px;display:flex;flex-direction:column;overflow:hidden }
+.report-official .report-table-cols { flex:0 0 auto;display:flex;align-items:center;padding:10px 14px 7px;font-size:13px;color:#7b9ba8;background:#0c2019b3;border-bottom:1px solid rgba(84,226,167,.12) }
+.report-official .col-item { line-height:1.2 }
+.report-official .col-nick { flex:1.8;text-align:left }
+.report-official .col-buyin { flex:1.1;text-align:right }
+.report-official .col-hands { flex:1;text-align:right }
+.report-official .col-vpip { flex:1.1;text-align:right }
+.report-official .col-net { flex:1.3;text-align:right }
+.report-official .report-players-scroll-wrap { flex:1 1 0;overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(84,226,167,.25) transparent }
+.report-official .report-players-scroll-wrap::-webkit-scrollbar { width:4px }
+.report-official .report-players-scroll-wrap::-webkit-scrollbar-thumb { background:#54e2a74d;border-radius:4px }
+.report-official .report-players-table { display:flex;flex-direction:column }
+.report-official .report-row-item { display:flex;align-items:center;padding:11px 14px;border-bottom:1px solid rgba(255,255,255,.035);font-size:14px;transition:background .12s ease }
+.report-official .report-row-item:hover { background:#54e2a70d }
+.report-official .player-nick-col { color:#fff;font-weight:500;display:flex;align-items:center;gap:6px;overflow:hidden }
+.report-official .player-name-txt { white-space:nowrap;overflow:hidden;text-overflow:ellipsis }
+.report-official .col-buyin, .report-official .col-hands, .report-official .col-vpip { color:#c9d5de;font-size:13.5px }
+.report-official .net-plus { color:#10b981!important;font-weight:600 }
+.report-official .net-minus { color:#f87171!important;font-weight:600 }
+.report-official .net-zero { color:#64748b!important;font-weight:500 }
+.report-official .report-more-row, .report-official .report-end-row { display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 14px 14px;font-size:12px;color:#7b9ba8;cursor:pointer }
+.report-official .report-more-row:hover { color:#a7f3d0 }
+.report-official .report-spin-dot { width:13px;height:13px;border:2px solid rgba(84,226,167,.2);border-top-color:#10b981;border-radius:50%;animation:spin .8s linear infinite }
+.report-official .report-spectators-section { flex:0 0 178px;height:178px;max-height:188px;display:flex;flex-direction:column;border-top:1px solid rgba(84,226,167,.14);background:#0816118c;overflow:hidden }
+.report-official .spectators-title-line { flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;padding:10px 14px 6px;font-size:13px;color:#7b9ba8 }
+.report-official .spectators-title-line strong { font-weight:600;color:#94a3b8;letter-spacing:.2px }
+.report-official .spectators-scroll-hint { font-size:11px;color:#54e2a7b3 }
+.report-official .spectators-scroll-container { flex:1 1 0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:2px 12px 10px;scrollbar-width:thin;scrollbar-color:rgba(84,226,167,.25) transparent }
+.report-official .spectators-scroll-container::-webkit-scrollbar { width:4px }
+.report-official .spectators-scroll-container::-webkit-scrollbar-thumb { background:#54e2a74d;border-radius:4px }
+.report-official .spectators-avatar-grid { display:grid;grid-template-columns:repeat(5,1fr);row-gap:12px;column-gap:6px;padding:2px 0 6px }
+.report-official .spectator-card-item { display:flex;flex-direction:column;align-items:center;gap:5px }
+.report-official .spectator-avatar-img { width:44px;height:44px;border-radius:50%;object-fit:cover;border:1.5px solid rgba(84,226,167,.2);background:#141c22;box-shadow:0 2px 6px #00000059;transition:transform .15s ease,border-color .15s ease }
+.report-official .spectator-card-item:hover .spectator-avatar-img { transform:scale(1.08);border-color:#10b981 }
+.report-official .spectator-name-label { font-size:11px;color:#c5d4db;text-align:center;max-width:54px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.2 }
+.report-official .report-bottom-navbar { flex:0 0 auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px max(14px,env(safe-area-inset-bottom,14px));background:#0a1a15f5;border-top:1px solid rgba(84,226,167,.18) }
+.report-official .report-nav-tab { flex:1;height:36px;background:linear-gradient(180deg,#123024d6,#0a1c15eb);border:1px solid rgba(110,231,183,.22);border-radius:10px;color:#a8c5b7;font-size:13px;font-weight:700;cursor:pointer;display:flex;flex-direction:row;align-items:center;justify-content:center;padding:0 10px;box-shadow:0 2px 6px #0000004d,inset 0 1px #ffffff12;transition:all .16s ease }
+.report-official .report-nav-tab.active { background:linear-gradient(135deg,#00e676,#059669);border-color:#a7f3d0e0;color:#032014;font-weight:800;box-shadow:0 3px 12px #00e57559,inset 0 1px #ffffff6b }
+.report-official .active-indicator-bar { display:none }
+.report-official .report-close-btn { width:30px;height:30px;border-radius:50%;background:#ffffff14;border:1px solid rgba(255,255,255,.14);color:#a0aec0;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s ease;flex-shrink:0 }
+.report-official .report-close-btn:hover { background:#ffffff2e;color:#fff }
+.report-official .report-rank-medal { font-size:13px;line-height:1;margin-right:4px }
+.report-official .report-rank-num { font-size:11px;font-weight:700;color:#64748b;margin-right:6px;min-width:14px;display:inline-block;text-align:center }
+.report-official .report-row-item.is-top-winner { background:#ffd7000d;border-left:2px solid #ffd700 }
+.report-official .drawer-fade-enter-active .side-drawer-container, .report-official .drawer-fade-leave-active .side-drawer-container { transition:transform .28s cubic-bezier(.2,.9,.3,1),opacity .25s ease }
+.report-official .drawer-fade-enter-from .side-drawer-container, .report-official .drawer-fade-leave-to .side-drawer-container { transform:translate(-100%);opacity:0 }
+
+.report-official .side-drawer-container { animation: reportDrawerIn .28s cubic-bezier(.2, .9, .3, 1) both; }
+@keyframes reportDrawerIn { from { transform: translate(-100%); opacity: 0 } to { transform: none; opacity: 1 } }
+html:not(.is-tg-miniapp) .report-official .side-drawer-container { padding-top: 16px; }
+.report-official .report-close-btn {
+  width: 30px; height: 30px; border-radius: 50%; background: rgba(16, 42, 33, .85);
+  border: 1px solid rgba(212, 175, 55, .32); color: #d6e4dd; display: flex; align-items: center;
+  justify-content: center; cursor: pointer; padding: 0; box-sizing: border-box; flex-shrink: 0;
+}
+.report-official .report-close-btn:active { transform: scale(.92); background: rgba(24, 62, 48, .95); }

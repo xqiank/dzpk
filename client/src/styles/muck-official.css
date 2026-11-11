@@ -1,0 +1,41 @@
+/* 查看对手盖牌：官方 MuckRevealDialog（peek-card 加密牌背 + 眼睛徽章 + 金色价签）
+   数值取自 PokerTable-DSJpRdmT.css 原样 */
+
+.muck-official .modal-backdrop { position:fixed;inset:0;background:#00000059;-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px;box-sizing:border-box }
+.muck-official .cocos-dialog-box { background:linear-gradient(180deg,#0c2019f2,#06120ef7)!important;backdrop-filter:blur(22px) saturate(180%);-webkit-backdrop-filter:blur(22px) saturate(180%);border:1px solid rgba(212,175,55,.36)!important;border-radius:20px;padding:18px 20px;width:90%;max-width:360px;max-height:88vh;overflow-y:auto;box-shadow:0 22px 54px #000000e0,0 0 28px #10b98124,inset 0 1px #ffe8a338!important;color:#fff;margin:auto;position:relative;box-sizing:border-box }
+.muck-official .dialog-header { display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid rgba(212,175,55,.16);padding-bottom:10px;margin-bottom:14px }
+.muck-official .dialog-title-col strong { font-size:16px;color:#ffd875;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,.6) }
+.muck-official .dialog-subtitle { display:block;font-size:11px;color:#8faea2;margin-top:3px }
+.muck-official .dialog-close-btn { width:30px;height:30px;border-radius:50%;background:#102a21d9;border:1px solid rgba(212,175,55,.32);color:#d6e4dd;display:flex;align-items:center;justify-content:center;cursor:pointer;line-height:1;transition:all .18s cubic-bezier(.2,.8,.2,1);padding:0;box-sizing:border-box;box-shadow:0 2px 6px #00000059,inset 0 1px #ffffff1f }
+.muck-official .dialog-close-btn:hover, .muck-official .dialog-close-btn:active { background:#183e30f2;border-color:#ffd875a6;color:#fff;transform:scale(.92) }
+.muck-official .dialog-actions-row { display:flex;gap:12px }
+.muck-official .dlg-btn-cancel { flex:1;padding:12px 0;border-radius:12px;background:#ffffff14;border:1px solid rgba(255,255,255,.14);color:#c0cdd8;font-size:14px;font-weight:600;cursor:pointer;transition:background .15s,transform .1s }
+.muck-official .dlg-btn-cancel:active { background:#ffffff24;transform:scale(.98) }
+.muck-official .dlg-btn-confirm { flex:1.4;padding:12px 0;border-radius:12px;background:linear-gradient(180deg,#ffe082,gold 45%,#c88a10);border:1.5px solid rgba(255,248,220,.7);color:#2b1800;font-size:15px;font-weight:900;letter-spacing:.5px;cursor:pointer;box-shadow:0 4px 16px #c88a1080,inset 0 1px #ffffffb3;transition:transform .12s,box-shadow .12s }
+.muck-official .dlg-btn-confirm:active:not(:disabled) { transform:scale(.97);box-shadow:0 2px 8px #c88a10b3 }
+.muck-official .dlg-btn-confirm:disabled { opacity:.6;cursor:not-allowed;box-shadow:none }
+.muck-official .muck-reveal-dialog { max-width:340px;text-align:center }
+.muck-official .muck-dialog-body { padding:16px 14px 10px;display:flex;flex-direction:column;align-items:center;gap:12px }
+.muck-official .muck-card-peek-visual { position:relative;display:flex;align-items:center;justify-content:center;gap:8px;padding:8px 0 }
+.muck-official .peek-card { position:relative;width:44px;height:62px;border-radius:6px;overflow:hidden;background:linear-gradient(155deg,#17263c,#0b1320);border:1px solid rgba(255,214,112,.62);box-shadow:0 6px 14px #000000ad,0 0 0 1px #ffd67029,inset 0 1px #fff5cc59;display:flex;align-items:center;justify-content:center;-webkit-user-select:none;user-select:none;transition:transform .2s ease }
+.muck-official .peek-card-img { width:100%;height:100%;object-fit:cover;filter:brightness(.85) contrast(1.12) saturate(1.15) }
+.muck-official .peek-card-filigree { position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 50%,#ffce5438,#0b142275 65%,#060b14bf),repeating-linear-gradient(45deg,rgba(255,216,117,.055) 0px,rgba(255,216,117,.055) 1px,transparent 1px,transparent 4px) }
+.muck-official .peek-card-filigree:after { content:"";position:absolute;inset:3px;border-radius:4px;border:1px solid rgba(255,218,124,.36);pointer-events:none }
+.muck-official .peek-card.card-left { transform:rotate(-10deg) translate(4px) }
+.muck-official .peek-card.card-right { transform:rotate(10deg) translate(-4px) }
+.muck-official .peek-eye-badge { position:absolute;z-index:3;width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 32% 28%,#263146f5,#0c111afa);border:1.5px solid rgba(255,216,117,.9);box-shadow:0 4px 12px #000c,0 0 14px #ffcc5273,inset 0 1px 2px #fff6d059;display:flex;align-items:center;justify-content:center }
+.muck-official .muck-dialog-msg { font-size:14px;color:#f4efda;line-height:1.5;margin:0 }
+.muck-official .muck-dialog-msg .muck-target-player { color:#39e3a6 }
+.muck-official .muck-dialog-badge { background:#ffcf5c1f;border:1px solid rgba(255,207,92,.45);color:#ffd45b;font-size:12px;font-weight:700;padding:5px 14px;border-radius:16px;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 8px #ffcf5c26 }
+.muck-official .vip-crown-icon { filter:drop-shadow(0 1px 2px rgba(0,0,0,.5)) }
+.muck-official .muck-dialog-notes { display:flex;flex-direction:column;gap:3px;color:#809c91;font-size:11px;text-align:left }
+.muck-official .dlg-btn-reveal { background:linear-gradient(135deg,#10b981,#059669)!important;border:1px solid rgba(52,211,153,.5)!important;color:#fff!important;box-shadow:0 4px 12px #10b98159!important;font-weight:700!important }
+.muck-official .dlg-btn-reveal:active { transform:scale(.98) }
+.muck-official .dlg-btn-confirm.dlg-btn-danger-fold { background:linear-gradient(135deg,#ef4444,#b91c1c)!important;border:1px solid rgba(248,113,113,.7)!important;color:#fff!important;box-shadow:0 4px 14px #ef444480!important }
+.muck-official .dialog-fade-enter-active .cocos-dialog-box, .muck-official .dialog-fade-leave-active .cocos-dialog-box { transition:transform .22s cubic-bezier(.2,.9,.3,1),opacity .22s ease }
+.muck-official .dialog-fade-enter-from .cocos-dialog-box, .muck-official .dialog-fade-leave-to .cocos-dialog-box { transform:scale(.95);opacity:0 }
+.muck-official .modal-backdrop {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, .45); z-index: 210;
+  display: flex; align-items: center; justify-content: center; padding: 16px;
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+}

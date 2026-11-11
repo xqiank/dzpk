@@ -1,0 +1,200 @@
+/* 战绩中心：官方 RecordCenter（牌局卡 / 生涯统计 / 排行榜样式）
+   数值取自 RecordCenter-Ddno44hw.css 原样，仅加 .records-official 作用域前缀 */
+
+.records-official .hand-card-wrapper { position:relative;background:radial-gradient(ellipse 65% 85% at 88% 50%,rgba(212,175,55,.09) 0%,transparent 70%),linear-gradient(115deg,#102a1ff2,#0a1b14f7 55%,#07130efa);border:1px solid rgba(243,204,122,.26);border-radius:18px;padding:14px 16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 10px 24px #00000085,inset 0 1px #fff3c433;transition:all .22s cubic-bezier(.16,1,.3,1);overflow:hidden }
+.records-official .hand-card-wrapper:before { content:"";position:absolute;left:0;top:14px;bottom:14px;width:3px;border-radius:0 4px 4px 0;background:linear-gradient(180deg,#fde68a,#10b981);box-shadow:0 0 8px #d4af3773;pointer-events:none }
+.records-official .hand-card-wrapper:hover { border-color:#f3cc7a80;box-shadow:0 12px 28px #0009,0 0 16px #d4af3724;transform:translateY(-1px) }
+.records-official .hand-card-header { display:flex;align-items:center;justify-content:space-between;padding-bottom:9px;border-bottom:1px solid rgba(255,255,255,.06);font-size:12px }
+.records-official .header-left { display:flex;align-items:center;gap:8px }
+.records-official .room-badge { font-weight:700;color:#fff;font-size:13px;letter-spacing:.2px }
+.records-official .hand-no-badge { padding:2px 7px;border-radius:6px;background:#00e5751f;border:1px solid rgba(0,229,117,.25);color:#00e575;font-weight:700;font-size:11px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace }
+.records-official .header-right { display:flex;align-items:center;gap:10px;color:#8faea2 }
+.records-official .time-label { color:#799a8b;font-size:11px }
+.records-official .pot-num { color:#8faea2;font-size:11px }
+.records-official .pot-num b { color:#fcedba;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:700 }
+.records-official .hand-card-body { display:flex;align-items:center;justify-content:space-between;gap:10px }
+.records-official .cards-column { display:flex;flex-direction:column;gap:4px }
+.records-official .column-title { font-size:10px;font-weight:600;color:#8faea2;letter-spacing:.05em }
+.records-official .cards-row { display:flex;gap:5px }
+.records-official .my-hole-cards { flex-shrink:0 }
+.records-official .community-board { flex:1;min-width:0 }
+.records-official .board-row { overflow-x:auto }
+.records-official .result-column { align-items:flex-end;flex-shrink:0 }
+.records-official .hand-type-tag { font-size:11px;font-weight:700;color:#fcedba;background:#d4b76826;border:1px solid rgba(212,183,104,.3);padding:2px 8px;border-radius:8px;margin-bottom:2px }
+.records-official .profit-badge { font-size:18px;font-weight:800;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-variant-numeric:tabular-nums;padding:2px 4px;letter-spacing:.5px }
+.records-official .profit-badge.is-win { color:#00e575;text-shadow:0 0 14px rgba(0,229,117,.5) }
+.records-official .profit-badge.is-loss { color:#ff6e6e;text-shadow:0 0 10px rgba(255,110,110,.3) }
+.records-official .profit-badge.is-unknown { color:#8faea2 }
+.records-official .hand-card-footer { display:flex;align-items:center;gap:8px;padding-top:10px;border-top:1px solid rgba(255,255,255,.06) }
+.records-official .footer-btn { display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.1);background:#ffffff0d;color:#a4beaf;font-size:11px;font-weight:600;cursor:pointer;transition:all .15s ease }
+.records-official .footer-btn.replay-btn { background:#00e5751a;border-color:#00e5754d;color:#00e575 }
+.records-official .footer-btn.replay-btn:hover { background:#00e57533;color:#fff }
+.records-official .footer-btn.fairness-btn { background:#d4b76814;border-color:#d4b76840;color:#f2dc9b }
+.records-official .footer-btn.fairness-btn:hover { background:#d4b7682e;color:#fff }
+.records-official .favorite-btn.active { color:#f59e0b;border-color:#f59e0b66;background:#f59e0b1a }
+.records-official .career-stats-container { display:flex;flex-direction:column;gap:14px }
+.records-official .game-filter-capsules { display:flex;gap:8px }
+.records-official .capsule-btn { padding:6px 14px;border-radius:16px;border:1px solid rgba(66,126,100,.35);background:#0a241cb3;color:#8faea2;font-size:12px;cursor:pointer;transition:all .2s }
+.records-official .capsule-btn.active { background:#00e5752e;border-color:#00e575;color:#00e575;font-weight:700 }
+.records-official .stats-hero-card { background:linear-gradient(135deg,#0e2c22e6,#081c16f5);border:1px solid rgba(50,110,85,.45);border-radius:16px;padding:16px;display:flex;align-items:center;gap:16px;box-shadow:0 8px 24px #0006 }
+.records-official .ring-gauge-wrap { position:relative;width:120px;height:120px;flex-shrink:0;display:grid;place-items:center }
+.records-official .ring-gauge-svg { width:120px;height:120px;transform:rotate(-90deg) }
+.records-official .outer-ring { stroke:#00e575;stroke-width:8;filter:drop-shadow(0 0 6px rgba(0,229,117,.6)) }
+.records-official .inner-ring { stroke:#ffd777;stroke-width:8;filter:drop-shadow(0 0 5px rgba(255,215,119,.5)) }
+.records-official .ring-center-content { position:absolute;text-align:center }
+.records-official .vpip-num { font-size:16px;color:#fff;font-weight:800;display:block }
+.records-official .style-assessment-col { flex:1;min-width:0;display:flex;flex-direction:column;gap:6px }
+.records-official .style-badge-tag { display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:8px;background:linear-gradient(135deg,#ffd77733,#d4af374d);border:1px solid rgba(255,215,119,.5);color:#ffd777;font-size:12px;font-weight:800;width:fit-content }
+.records-official .style-desc-text { margin:0;font-size:11px;color:#a4c2b7;line-height:1.45 }
+.records-official .gauge-legend-row { display:flex;flex-direction:column;gap:4px;margin-top:4px;font-size:11px }
+.records-official .legend-item { display:flex;align-items:center;gap:6px;color:#8faea2 }
+.records-official .legend-item b { color:#f1f8f5 }
+.records-official .technical-metrics-grid { display:grid;grid-template-columns:repeat(3,1fr);gap:10px }
+.records-official .technical-metrics-grid { grid-template-columns:repeat(2,1fr) }
+.records-official .metric-card { background:#0c241cd9;border:1px solid rgba(50,110,85,.35);border-radius:12px;padding:10px 12px;display:flex;flex-direction:column;gap:3px }
+.records-official .metric-val { font-size:16px;font-weight:800;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#fff }
+.records-official .metric-val.text-green { color:#00e575 }
+.records-official .metric-val.text-gold { color:#ffd777 }
+.records-official .metric-sub { font-size:10px;color:#628377 }
+.records-official .profit-trend-card { background:linear-gradient(180deg,#0c261ee6,#071813f2);border:1px solid rgba(50,110,85,.4);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:12px }
+.records-official .trend-card-header { display:flex;align-items:center;justify-content:space-between }
+.records-official .total-profit-num { font-size:16px;color:#00e575;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:800 }
+.records-official .chart-canvas-box { width:100%;height:80px;position:relative }
+.records-official .trend-svg { width:100%;height:100% }
+.records-official .category-tabs { display:grid;grid-template-columns:repeat(3,1fr);gap:8px;background:#0c2019e0;padding:6px;border-radius:14px;border:1px solid rgba(80,160,115,.28);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px) }
+.records-official .category-btn { display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 4px;border-radius:10px;background:linear-gradient(180deg,#123024c7,#0a1c15e0);border:1px solid rgba(110,231,183,.2);color:#a8c5b7;font-size:13px;font-weight:700;cursor:pointer;box-shadow:0 2px 5px #00000042;transition:all .25s cubic-bezier(.4,0,.2,1);position:relative }
+.records-official .category-btn.active { background:linear-gradient(135deg,#e6b43247,#c88c1429);color:#ffdf7e;border:1px solid rgba(255,215,0,.6);box-shadow:0 4px 14px #ffb40038 }
+.records-official .text-gold { color:#fbbf24 }
+.records-official .cyber-spinner { width:36px;height:36px;border:3px solid rgba(255,215,0,.15);border-top-color:gold;border-radius:50%;animation:spin-0d53bdc1 .8s linear infinite }
+.records-official .empty-list { display:flex;flex-direction:column;align-items:center;padding:40px 16px;color:#64748b;gap:10px }
+.records-official .category-tabs { padding:8px;gap:12px }
+.records-official .category-btn { padding:12px 8px;font-size:15px }
+.records-official .filter-group { display:flex;gap:8px }
+.records-official .text-gold { color:#34d399 }
+.records-official .cyber-spin { width:32px;height:32px;border:3px solid rgba(0,229,117,.15);border-top-color:#00e575;border-radius:50%;animation:spin-e64ed1b8 .8s linear infinite }
+.records-official .empty-hands-state { display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;text-align:center;background:radial-gradient(120% 120% at 50% 10%,#143024d9,#0a1a14f2);border-radius:20px;border:1px solid rgba(0,229,117,.2);box-shadow:0 8px 24px #0006;gap:12px }
+.records-official .empty-icon-box { width:64px;height:64px;border-radius:18px;background:#00e5751a;border:1px solid rgba(0,229,117,.3);display:flex;align-items:center;justify-content:center;margin-bottom:4px;box-shadow:0 0 20px #00e5752e }
+.records-official .empty-real-img { width:36px;height:36px;object-fit:contain;opacity:.85 }
+.records-official .empty-hands-state h3 { margin:0;font-size:17px;font-weight:700;color:#fff }
+.records-official .empty-hands-state p { margin:0;font-size:13px;color:#8faea2;max-width:320px;line-height:1.5 }
+
+/* 页面级补充：与官方卡片共存的间距与页头适配 */
+.records-official { padding-bottom: 108px; }
+.records-official .game-filter-capsules { overflow-x: auto; }
+.records-official .hand-card-header .header-left { min-width: 0; flex: 1; display: flex; align-items: center; gap: 6px; }
+.records-official .hand-card-header .room-badge {
+  max-width: 168px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.records-official .hand-card-header .header-right { flex-shrink: 0; display: flex; align-items: center; gap: 8px; }
+.records-official .filters-row { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 2px; }
+.records-official .filter-capsule { flex-shrink: 0; }
+.records-official .empty-hands-state {
+  display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center;
+  padding: 34px 20px; border-radius: 16px;
+  background: rgba(13, 31, 24, .78); border: 1px solid rgba(84, 226, 167, .18);
+}
+.records-official .empty-hands-state b { font-size: 15px; color: #f0fdf4; }
+.records-official .empty-hands-state p { margin: 0; font-size: 12px; color: #8fa6b8; line-height: 1.5; }
+.records-official .empty-icon-box {
+  width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: radial-gradient(circle, rgba(16, 185, 129, .22), rgba(6, 20, 15, .85));
+  border: 1px solid rgba(110, 231, 177, .3);
+}
+.records-official .trend-card-header { display: flex; align-items: center; justify-content: space-between; }
+.records-official .text-red { color: #f87171 !important; }
+.records-official .total-profit-num.green { color: #39e3a6; }
+.records-official .total-profit-num.red { color: #f87171; }
+.records-official .leaderboard-view { width:100%;height:100%;display:flex;flex-direction:column;overflow:hidden;position:relative;min-height:0 }
+.records-official .lb-inline-error { padding:12px;color:#bdcec6;text-align:center }
+.records-official .leaderboard-fixed-header { flex-shrink:0;display:flex;flex-direction:column;gap:10px;position:relative;z-index:10;padding-bottom:6px }
+.records-official .lb-load-more-box { display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 0 20px;color:#00e575;font-size:12px;font-weight:500;letter-spacing:.5px }
+.records-official .leaderboard-list-end-hint { display:flex;align-items:center;justify-content:center;padding:18px 0 20px;color:#a0c8b473;font-size:11.5px;letter-spacing:.4px;-webkit-user-select:none;user-select:none }
+.records-official .leaderboard-list-end-hint:before, .records-official .leaderboard-list-end-hint:after { content:"";flex:0 0 36px;height:1px;background:linear-gradient(90deg,transparent,rgba(0,229,117,.3),transparent);margin:0 10px }
+.records-official .category-tabs { display:grid;grid-template-columns:repeat(3,1fr);gap:8px;background:#0c2019e0;padding:6px;border-radius:14px;border:1px solid rgba(80,160,115,.28);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px) }
+.records-official .cat-icon-box { display:flex;align-items:center;justify-content:center }
+.records-official .cat-svg { width:16px;height:16px }
+.records-official .cat-badge { font-size:9px;padding:1px 4px;border-radius:4px;background:#ff4d4f40;color:#ff7875;border:1px solid rgba(255,77,79,.4) }
+.records-official .period-tabs-wrap { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:0 4px }
+.records-official .period-tabs { display:inline-flex;gap:6px;background:#0c1018cc;padding:4px;border-radius:20px;border:1px solid rgba(255,255,255,.06) }
+.records-official .lb-loading-state { display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 0;color:#8fa0b5;gap:14px }
+.records-official .podium-section { display:flex;align-items:flex-end;justify-content:center;gap:8px;padding:30px 10px 0;background:radial-gradient(circle at 50% 10%,#ffd70014,#0f121af2 75%);border-radius:20px;border:1px solid rgba(255,215,0,.15);position:relative;overflow:hidden }
+.records-official .podium-section:before { content:"";position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,215,0,.6),transparent) }
+.records-official .podium-col { display:flex;flex-direction:column;align-items:center;flex:1;max-width:140px;z-index:1 }
+.records-official .podium-col.rank-1 { order:2;max-width:160px;z-index:2 }
+.records-official .podium-col.rank-2 { order:1 }
+.records-official .podium-col.rank-3 { order:3 }
+.records-official .player-avatar-wrap { position:relative;margin-bottom:6px }
+.records-official .podium-col.rank-1 .avatar-img { width:66px;height:66px }
+.records-official .vip-tag { position:absolute;bottom:-4px;left:50%;transform:translate(-50%);background:#334155;color:#94a3b8;font-size:9px;font-weight:700;padding:1px 5px;border-radius:6px;border:1px solid rgba(255,255,255,.1);white-space:nowrap }
+.records-official .gold-vip { background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;border:1px solid #ffd700 }
+.records-official .podium-info { display:flex;flex-direction:column;align-items:center;gap:2px;margin-bottom:8px;width:100% }
+.records-official .player-name { font-size:13px;font-weight:600;color:#f1f5f9;max-width:100px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:center }
+.records-official .champion-name { font-size:14px;font-weight:700;color:#ffdf7e;max-width:120px }
+.records-official .player-tier { font-size:10px;color:#94a3b8;padding:1px 6px;border-radius:8px;background:#ffffff0d }
+.records-official .champion-tier { color:gold;background:#ffd7001f;border:1px solid rgba(255,215,0,.25) }
+.records-official .val-profit { color:#10b981 }
+.records-official .val-winrate { color:#38bdf8 }
+.records-official .val-wealth { color:#fbbf24 }
+.records-official .rank-list-container { background:#12162099;border-radius:16px;border:1px solid rgba(255,255,255,.06);overflow:hidden }
+.records-official .rank-list-header { display:grid;grid-template-columns:50px 1fr 90px 100px;padding:10px 16px;font-size:11px;color:#64748b;font-weight:600;border-bottom:1px solid rgba(255,255,255,.05);background:#0c0f1666 }
+.records-official .rank-badge { display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:6px;background:#ffffff0f;color:#94a3b8;font-size:12px;font-weight:700;font-family:monospace }
+.records-official .player-cell { display:flex;align-items:center;gap:10px }
+.records-official .cell-names { display:flex;flex-direction:column;gap:2px;min-width:0 }
+.records-official .cell-nickname { font-size:13px;font-weight:600;color:#e2e8f0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis }
+.records-official .cell-vip { font-size:9px;font-weight:700;color:#f59e0b;background:#f59e0b1f;padding:1px 4px;border-radius:4px;width:fit-content }
+.records-official .tier-pill { font-size:11px;color:#94a3b8;background:#ffffff0a;padding:3px 8px;border-radius:10px;border:1px solid rgba(255,255,255,.06);white-space:nowrap }
+.records-official .col-stat { display:flex;flex-direction:column;align-items:flex-end;gap:2px }
+.records-official .stat-sub { font-size:10px;color:#64748b }
+.records-official .empty-list { display:flex;flex-direction:column;align-items:center;padding:40px 16px;color:#64748b;gap:10px }
+.records-official .my-rank-dock { position:fixed;bottom:calc(80px + env(safe-area-inset-bottom,0px));left:0;right:0;z-index:50;padding:0 16px;pointer-events:none }
+.records-official .my-dock-inner { pointer-events:auto;max-width:720px;margin:0 auto;background:linear-gradient(135deg,#1a202ef2,#121621fa);border:1px solid rgba(255,215,0,.35);box-shadow:0 8px 32px #00000080,0 0 16px #ffd7001f;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);border-radius:14px;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px }
+.records-official .my-rank-badge { display:flex;flex-direction:column;align-items:center;min-width:54px;padding-right:12px;border-right:1px solid rgba(255,255,255,.08) }
+.records-official .my-profile-cell { display:flex;align-items:center;gap:10px;flex:1;min-width:0 }
+.records-official .my-dock-text { display:flex;flex-direction:column;gap:2px;min-width:0 }
+.records-official .my-name-row { display:flex;align-items:center;gap:6px }
+.records-official .my-dock-name { font-size:13px;font-weight:700;color:#f1f5f9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis }
+.records-official .my-dock-tier { font-size:10px;color:gold;background:#ffd7001f;padding:1px 6px;border-radius:6px;white-space:nowrap }
+.records-official .my-dock-gap { font-size:11px;color:#94a3b8 }
+.records-official .champion-hint { display:flex;align-items:center;gap:4px;color:gold;font-weight:600 }
+.records-official .gap-val { color:#38bdf8;font-weight:600;font-family:monospace }
+.records-official .my-dock-stat { display:flex;flex-direction:column;align-items:flex-end }
+.records-official .my-dock-lbl { font-size:10px;color:#64748b }
+.records-official .leaderboard-view { max-width:880px;margin:0 auto }
+.records-official .category-tabs { padding:8px;gap:12px }
+.records-official .cat-svg { width:20px;height:20px }
+.records-official .podium-section { padding:40px 30px 0;gap:20px }
+.records-official .podium-col { max-width:180px }
+.records-official .podium-col.rank-1 { max-width:200px }
+.records-official .podium-col.rank-1 .avatar-img { width:82px;height:82px }
+.records-official .rank-list-header { grid-template-columns:60px 1fr 130px 140px;padding:14px 20px }
+.records-official .my-rank-dock { bottom:78px }
+.records-official .my-dock-inner { padding:12px 24px }
+/* 荣耀榜结构补全（官方模板中零散规则） */
+.records-official .cat-label { font-size: 12px; font-weight: 700; }
+.records-official .col-rank { width: 34px; flex-shrink: 0; text-align: center; }
+.records-official .col-player { flex: 1; min-width: 0; }
+.records-official .col-tier { width: 74px; flex-shrink: 0; text-align: center; }
+.records-official .champion-wrap { box-shadow: 0 0 18px rgba(255, 215, 0, .45), 0 0 0 2px rgba(255, 215, 0, .4); }
+.records-official .leaderboard-view { display: flex; flex-direction: column; gap: 10px; }
+.records-official .lb-loading-state {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 18px; font-size: 12px; color: #8fa6b8;
+}
+
+/* 排行榜行布局：一行内 名次 / 玩家 / 战绩 / 数值 */
+.records-official .category-btn { white-space: nowrap; }
+.records-official .category-btn .cat-label { white-space: nowrap; }
+.records-official .rank-row {
+  display: flex; align-items: center; gap: 8px; padding: 9px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, .04);
+}
+.records-official .rank-row .col-player { display: flex; align-items: center; gap: 8px; }
+.records-official .rank-row .col-rank { display: flex; align-items: center; justify-content: center; }
+.records-official .rank-row .col-tier { display: flex; align-items: center; justify-content: center; }
+.records-official .rank-row .col-stat { text-align: right; font-variant-numeric: tabular-nums; }
+.records-official .rank-list-header { display: flex; align-items: center; gap: 8px; padding: 6px 12px; }
+.records-official .rank-list-header .col-stat { text-align: right; }
+.records-official .rank-list-container { padding-bottom: 10px; }
+.records-official .val-loss { color: #f87171; }
+.records-official .leaderboard-view { padding-bottom: 8px; }
+.records-official .my-rank-dock { margin-top: 4px; }

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="packGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e53935"/>
+      <stop offset="60%" stop-color="#c62828"/>
+      <stop offset="100%" stop-color="#b71c1c"/>
+    </linearGradient>
+    <linearGradient id="filterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffb74d"/>
+      <stop offset="100%" stop-color="#f57c00"/>
+    </linearGradient>
+    <filter id="packShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <!-- Cigarettes peeking out -->
+  <g filter="url(#packShadow)">
+    <rect x="22" y="8" width="6" height="20" rx="1.5" fill="#f5f5f5"/>
+    <rect x="22" y="8" width="6" height="6" rx="1.5" fill="url(#filterGrad)"/>
+    <rect x="30" y="5" width="6" height="23" rx="1.5" fill="#ffffff"/>
+    <rect x="30" y="5" width="6" height="7" rx="1.5" fill="url(#filterGrad)"/>
+    <line x1="33" y1="5" x2="33" y2="4" stroke="#ff3d00" stroke-width="2" stroke-linecap="round"/>
+    <rect x="38" y="10" width="6" height="18" rx="1.5" fill="#eeeeee"/>
+    <rect x="38" y="10" width="6" height="6" rx="1.5" fill="url(#filterGrad)"/>
+  </g>
+  <!-- Smoke plume -->
+  <path d="M33 3 C31 -2 36 -4 34 -8" stroke="#cfd8dc" stroke-width="1.8" fill="none" opacity="0.6" stroke-linecap="round"/>
+  <!-- Cigarette Pack Body -->
+  <rect x="16" y="20" width="34" height="38" rx="4" fill="url(#packGrad)" filter="url(#packShadow)"/>
+  <!-- White Chevron Pattern (Classic Red Pack style) -->
+  <polygon points="16,20 33,32 50,20 50,30 33,42 16,30" fill="#ffffff"/>
+  <!-- Gold Shield / Emblem -->
+  <circle cx="33" cy="46" r="4.5" fill="#ffd54f"/>
+  <rect x="20" y="54" width="26" height="2" rx="1" fill="#ffffff" opacity="0.8"/>
+</svg>

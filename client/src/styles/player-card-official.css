@@ -1,0 +1,66 @@
+/* 玩家卡：官方 PlayerCardDialog（player-interact-card + 风格徽章 + 统计条 + 道具投掷）
+   规则数值取自 PokerTable-DSJpRdmT.css 原样 */
+
+.pcard-official .player-interact-backdrop { position:fixed;inset:0;z-index:120;background:#000000a6;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center }
+.pcard-official .player-interact-card { width:min(352px,calc(100vw - 32px));max-height:min(88vh,620px);overflow-y:auto;overscroll-behavior:contain;background:linear-gradient(180deg,#0c2019f2,#06120ef7)!important;backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border:1px solid rgba(212,175,55,.38);border-radius:20px;padding:20px 16px 16px;box-shadow:0 24px 60px #000000e0,0 0 28px #10b98124,inset 0 1px #ffe8a338;position:relative;display:flex;flex-direction:column;gap:12px }
+.pcard-official .player-card-top-row { display:flex;align-items:center;gap:11px;padding-top:2px }
+.pcard-official .player-card-avatar-wrapper { width:54px;height:54px;border-radius:50%;overflow:hidden;border:2px solid rgba(246,211,101,.55);box-shadow:0 4px 14px #0000008c,0 0 10px #f6d3652e;flex-shrink:0;background:#081813 }
+.pcard-official .player-card-main-avatar { width:100%;height:100%;object-fit:cover;display:block }
+.pcard-official .player-card-identity { flex:1;min-width:0;display:flex;flex-direction:column;gap:4px }
+.pcard-official .player-card-nickname { font-size:17px;font-weight:700;color:#f8fafc;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;line-height:1.2 }
+.pcard-official .player-card-id-row { display:inline-flex;align-items:center;gap:5px;cursor:pointer;color:#8faea2;font-size:13px;-webkit-user-select:none;user-select:none;transition:color .15s ease }
+.pcard-official .player-card-id-row:hover { color:#d1fae5 }
+.pcard-official .player-copy-icon { display:inline-flex;align-items:center;opacity:.85 }
+.pcard-official .player-card-quick-actions { display:flex;align-items:center;gap:7px;flex-shrink:0;margin-top:16px }
+.pcard-official .quick-action-btn { width:35px;height:35px;border-radius:9px;background:linear-gradient(180deg,#143429eb,#0b2019f5);border:1px solid rgba(110,231,177,.24);color:#d1fae5;display:grid;place-items:center;cursor:pointer;position:relative;transition:all .15s ease;padding:0;box-shadow:0 2px 6px #00000059,inset 0 1px #ffffff1a }
+.pcard-official .quick-action-btn:hover { background:linear-gradient(180deg,#1c4838f2,#0f2c22fa);border-color:#f6d3658c;color:#fff }
+.pcard-official .quick-action-btn:active { transform:scale(.92) }
+.pcard-official .quick-action-btn.is-muted { border-color:#ff5c5c73;background:#ff5c5c29 }
+.pcard-official .mail-alert-badge { position:absolute;top:-4px;right:-4px;width:14px;height:14px;border-radius:50%;background:linear-gradient(180deg,#ffe688,#f0ad38);border:1px solid rgba(10,26,21,.9);color:#1f1102;font-size:9.5px;font-weight:900;display:grid;place-items:center;box-shadow:0 1px 5px #f0ad38a6 }
+.pcard-official .player-card-stats-box { background:linear-gradient(180deg,#06130fd9,#040d0aeb);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:12px 6px;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;box-shadow:inset 0 1px 4px #00000073 }
+.pcard-official .stat-col-item { display:flex;flex-direction:column;gap:4px;align-items:center }
+.pcard-official .stat-num-val { font-size:15px;font-weight:800;color:#f8fafc;font-variant-numeric:tabular-nums;letter-spacing:-.02em }
+.pcard-official .stat-profit-val { color:#ffd875 }
+.pcard-official .stat-num-lbl { font-size:11px;color:#8faea2;font-weight:500 }
+.pcard-official .stat-profit-lbl { color:#d4b263 }
+.pcard-official .player-card-remark-bar { background:#06130fd1;border:1px solid rgba(84,226,167,.16);border-radius:11px;padding:10px 14px;min-height:42px;display:flex;align-items:center;box-shadow:inset 0 1px 3px #0006 }
+.pcard-official .remark-display-mode { width:100%;display:flex;justify-content:space-between;align-items:center;cursor:pointer }
+.pcard-official .remark-edit-btn { background:transparent;border:0;color:#94a3b8;display:grid;place-items:center;cursor:pointer;padding:0;transition:color .15s ease }
+.pcard-official .remark-edit-btn:hover { color:#fff }
+.pcard-official .remark-edit-mode { width:100%;display:flex;align-items:center;gap:8px }
+.pcard-official .remark-input-field { flex:1;background:#161c24;border:1px solid rgba(0,229,117,.3);border-radius:6px;padding:4px 8px;color:#fff;font-size:13px;outline:none }
+.pcard-official .remark-confirm-btn { background:#00e575;color:#041410;border:0;border-radius:6px;padding:4px 10px;font-size:12px;font-weight:700;cursor:pointer }
+.pcard-official .remark-cancel-btn { background:transparent;color:#94a3b8;border:0;padding:4px 6px;font-size:12px;cursor:pointer }
+.pcard-official .player-card-props-wrapper { padding-top:2px }
+.pcard-official .props-ten-grid { display:grid;grid-template-columns:repeat(5,1fr);gap:10px 4px }
+.pcard-official .prop-grid-item { display:flex;flex-direction:column;align-items:center;gap:5px;background:transparent;border:0;padding:4px 0;cursor:pointer;transition:transform .12s ease }
+.pcard-official .prop-grid-item:active { transform:scale(.88) }
+.pcard-official .prop-icon-box { width:44px;height:44px;display:grid;place-items:center }
+.pcard-official .prop-item-svg { width:38px;height:38px;object-fit:contain;filter:drop-shadow(0 3px 6px rgba(0,0,0,.45)) }
+.pcard-official .prop-price-capsule { display:inline-flex;align-items:center;justify-content:center;gap:3px;background:#0e221f;border:1px solid rgba(0,229,117,.25);border-radius:12px;padding:1px 7px;height:17px }
+.pcard-official .tether-sym { font-size:10px;font-weight:900;color:#26a17b }
+.pcard-official .price-val { font-size:10px;font-weight:700;color:#4ade80 }
+.pcard-official .player-card-inline-toast { position:absolute;bottom:8px;left:50%;transform:translate(-50%);background:#000000e0;border:1px solid rgba(0,229,117,.4);color:#e2fbe8;font-size:12px;font-weight:600;padding:6px 14px;border-radius:20px;white-space:nowrap;pointer-events:none;z-index:var(--z-board);box-shadow:0 4px 16px #0009 }
+.pcard-official .card-corner-close { position:absolute;top:6px;right:7px;width:26px!important;height:26px!important;z-index:var(--z-board) }
+.pcard-official .player-card-avatar-wrapper { position:relative }
+.pcard-official .player-card-seat-num { position:absolute;bottom:-2px;left:50%;transform:translate(-50%);background:#04120ee6;border:1px solid rgba(84,226,167,.4);border-radius:6px;font-size:9px;padding:0 4px;color:#ffd875;font-weight:800;white-space:nowrap;line-height:1.3 }
+.pcard-official .player-name-badge-row { display:flex;align-items:center;gap:6px;flex-wrap:wrap }
+.pcard-official .player-style-badge { font-size:10px;font-weight:800;padding:1px 7px;border-radius:8px;line-height:1.4;letter-spacing:.2px;box-shadow:0 2px 6px #0006 }
+.pcard-official .player-style-badge.badge-lag { background:linear-gradient(135deg,#ff475740,#ff6b8126);border:1px solid rgba(255,71,87,.55);color:#ff6b81 }
+.pcard-official .player-style-badge.badge-tag { background:linear-gradient(135deg,#2ed57340,#00e57526);border:1px solid rgba(46,213,115,.55);color:#2ed573 }
+.pcard-official .player-style-badge.badge-rock { background:linear-gradient(135deg,#747d8c40,#57606f26);border:1px solid rgba(116,125,140,.55);color:#ced6e0 }
+.pcard-official .player-style-badge.badge-fish { background:linear-gradient(135deg,#1e90ff40,#70a1ff26);border:1px solid rgba(30,144,255,.55);color:#70a1ff }
+.pcard-official .player-style-badge.badge-maniac { background:linear-gradient(135deg,#ffa50240,#ff475726);border:1px solid rgba(255,165,2,.55);color:#ffa502 }
+.pcard-official .player-style-badge.badge-balanced { background:linear-gradient(135deg,#ffd70040,#d4952026);border:1px solid rgba(255,215,0,.55);color:#ffd875 }
+.pcard-official .player-style-badge.badge-novice { background:#ffffff1a;border:1px solid rgba(255,255,255,.2);color:#cbd5e1 }
+.pcard-official .stat-bar-track { width:36px;height:3px;background:#ffffff14;border-radius:2px;margin-top:3px;overflow:hidden }
+.pcard-official .stat-bar-fill { height:100%;border-radius:2px;transition:width .3s ease }
+.pcard-official .stat-bar-fill.vpip-fill { background:linear-gradient(90deg,#2ed573,#ffa502) }
+.pcard-official .stat-bar-fill.pfr-fill { background:linear-gradient(90deg,#ffa502,#ff4757) }
+.pcard-official .props-header-label { display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:#8fa3b8;font-weight:600;margin-bottom:8px;padding:0 4px }
+.pcard-official .props-header-label small { font-size:10.5px;color:#64748b }
+
+.pcard-official .player-interact-backdrop { animation: pcIn .18s ease both; }
+@keyframes pcIn { from { opacity: 0 } to { opacity: 1 } }
+.pcard-official .player-interact-card { animation: pcPop .22s cubic-bezier(.2, .9, .3, 1) both; }
+@keyframes pcPop { from { transform: scale(.94); opacity: 0 } to { transform: scale(1); opacity: 1 } }

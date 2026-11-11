@@ -1,0 +1,144 @@
+/* 保险弹层：数值与结构全部对齐官方 InsuranceDialog + PokerTable 全局弹层样式
+   来源：PokerTable-DSJpRdmT.css（dialog / stat / plan / insurance 全组）+ InsuranceDialog 模板 */
+
+.ins-official .modal-backdrop {
+  position: fixed; inset: 0; background: rgba(0, 0, 0, .35);
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+  z-index: 210; display: flex; align-items: center; justify-content: center;
+  padding: 16px; box-sizing: border-box;
+}
+.ins-official .insurance-dialog {
+  max-width: 380px; width: 92%; margin: auto;
+  background: linear-gradient(180deg, #14281e, #0d1a13, #08110c);
+  border: 1px solid rgba(229, 213, 125, .35);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, .95), 0 0 26px rgba(229, 213, 125, .15);
+  border-radius: 18px; overflow: hidden;
+  backdrop-filter: blur(22px) saturate(180%); -webkit-backdrop-filter: blur(22px) saturate(180%);
+  animation: insPop .22s cubic-bezier(.2, .9, .3, 1);
+}
+@keyframes insPop { from { transform: scale(.95); opacity: 0 } to { transform: scale(1); opacity: 1 } }
+.ins-official .insurance-dialog.is-urgent-countdown {
+  border-color: #ff4757 !important;
+  box-shadow: 0 16px 44px rgba(0, 0, 0, .9), 0 0 28px rgba(255, 71, 87, .4) !important;
+  animation: insHeartbeat 1s ease-in-out infinite alternate;
+}
+@keyframes insHeartbeat { from { box-shadow: 0 16px 44px rgba(0,0,0,.9), 0 0 12px rgba(255,71,87,.35) } to { box-shadow: 0 16px 44px rgba(0,0,0,.9), 0 0 30px rgba(255,71,87,.65) } }
+
+.ins-official .insurance-header {
+  background: linear-gradient(90deg, #1a3828, #0d1a13);
+  border-bottom: 1px solid rgba(229, 213, 125, .25);
+  padding: 12px 16px;
+  display: flex; justify-content: space-between; align-items: flex-start;
+}
+.ins-official .insurance-title {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 15px; color: #e5c97b; text-shadow: 0 1px 3px rgba(0, 0, 0, .6);
+}
+.ins-official .insurance-shield-icon { display: inline-flex; color: #e5c97b; }
+.ins-official .dialog-subtitle { display: block; font-size: 11px; color: #8faea2; margin-top: 3px; }
+.ins-official .insurance-status-line {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-top: 5px; gap: 8px; flex-wrap: wrap;
+}
+.ins-official .insurance-countdown-pill {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: rgba(0, 229, 117, .15); border: 1px solid rgba(0, 229, 117, .4);
+  color: #58efbb; font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 10px;
+}
+.ins-official .insurance-countdown-pill.urgent {
+  background: rgba(255, 71, 87, .2); border-color: rgba(255, 71, 87, .6);
+  color: #ff4757; animation: insBlink .6s ease-in-out infinite alternate;
+}
+@keyframes insBlink { from { opacity: 1 } to { opacity: .45 } }
+.ins-official .wallet-rem-text { font-size: 10px; color: #8faea2; }
+
+.ins-official .insurance-body { padding: 14px 16px; max-height: 70vh; overflow-y: auto; }
+.ins-official .insurance-stat-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px;
+}
+.ins-official .stat-card {
+  background: rgba(8, 20, 14, .65); border: 1px solid rgba(229, 213, 125, .18);
+  border-radius: 8px; padding: 8px 6px; text-align: center;
+}
+.ins-official .stat-label { font-size: 10px; color: #8faea2; margin-bottom: 4px; }
+.ins-official .stat-val { font-size: 13px; font-weight: 700; color: #fff; font-variant-numeric: tabular-nums; }
+.ins-official .stat-val.highlight { color: #e5c97b; }
+.ins-official .stat-val.danger { color: #ef4444; }
+.ins-official .stat-val.odds-val { color: #58efbb; }
+
+.ins-official .insurance-outs-section {
+  margin-bottom: 14px; background: rgba(8, 20, 14, .55);
+  border: 1px solid rgba(239, 68, 68, .25); border-radius: 8px; padding: 8px 10px;
+}
+.ins-official .outs-heading { font-size: 11px; color: #f87171; font-weight: 600; margin-bottom: 6px; }
+.ins-official .outs-cards-container {
+  display: flex; flex-wrap: wrap; gap: 5px; max-height: 90px; overflow-y: auto;
+}
+.ins-official .out-card-mini { width: 26px; height: 36px; border-radius: 3px; overflow: hidden; box-shadow: 0 1px 4px rgba(0, 0, 0, .4); }
+.ins-official .out-card-mini .pcard { width: 26px; height: 36px; border-radius: 3px; box-shadow: none; }
+
+.ins-official .insurance-plans-section { margin-bottom: 12px; }
+.ins-official .plans-heading { font-size: 12px; color: #e5c97b; font-weight: 600; margin-bottom: 8px; }
+.ins-official .plans-list { display: flex; flex-direction: column; gap: 8px; }
+.ins-official .plan-card {
+  background: rgba(14, 32, 23, .5); border: 1.5px solid rgba(229, 213, 125, .18);
+  border-radius: 10px; padding: 10px 12px; cursor: pointer; transition: all .18s ease;
+}
+.ins-official .plan-card:hover { background: rgba(229, 201, 123, .08); border-color: rgba(229, 201, 123, .4); }
+.ins-official .plan-card.active {
+  background: linear-gradient(135deg, rgba(229, 201, 123, .18), rgba(16, 185, 129, .12));
+  border-color: #e5c97b; box-shadow: 0 0 14px rgba(229, 201, 123, .22);
+}
+.ins-official .plan-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+.ins-official .plan-label { font-size: 13px; font-weight: 700; color: #e5c97b; }
+.ins-official .plan-radio-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid #5a7566; position: relative; }
+.ins-official .plan-card.active .plan-radio-dot {
+  border-color: #e5c97b; background: #e5c97b; box-shadow: inset 0 0 0 2px #08110c;
+}
+.ins-official .plan-details { display: flex; justify-content: space-between; font-size: 11px; }
+.ins-official .detail-row { display: flex; flex-direction: column; gap: 2px; }
+.ins-official .detail-row span { color: #8faea2; font-size: 10px; }
+.ins-official .premium-cost { color: #fca5a5; font-weight: 600; }
+.ins-official .payout-amount { color: #34d399; font-weight: 600; }
+.ins-official .detail-row.highlight-net .net-claim { color: #58efbb; }
+
+.ins-official .insurance-tips {
+  font-size: 10px; line-height: 1.5; color: #8faea2;
+  background: rgba(8, 20, 14, .5); border-radius: 6px; padding: 6px 8px;
+}
+.ins-official .insurance-actions {
+  display: flex; gap: 10px; padding: 12px 16px;
+  background: rgba(8, 20, 14, .6); border-top: 1px solid rgba(229, 213, 125, .15);
+}
+.ins-official .dlg-btn-cancel {
+  padding: 12px 0; border-radius: 12px; background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .14); color: #c0cdd8;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  transition: background .15s, transform .1s;
+}
+.ins-official .dlg-btn-cancel:active { background: rgba(255, 255, 255, .16); transform: scale(.98); }
+.ins-official .insurance-btn-pass { flex: 1; }
+.ins-official .insurance-btn-buy {
+  flex: 1.3; display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  padding: 12px 0; border-radius: 12px; border: 1px solid #34d399;
+  background: linear-gradient(135deg, #10b981, #059669); color: #fff;
+  font-size: 14px; font-weight: 700; cursor: pointer;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, .35);
+  transition: background .15s, transform .12s;
+}
+.ins-official .insurance-btn-buy:active { transform: scale(.97); background: linear-gradient(135deg, #34d399, #10b981); }
+.ins-official .insurance-btn-buy:disabled { opacity: .55; cursor: wait; transform: none; }
+
+/* 旁观等待：全下领先玩家正在评估 */
+.insurance-waiting-banner {
+  position: absolute; top: 75px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(90deg, rgba(20, 40, 30, .95), rgba(10, 22, 16, .95));
+  border: 1px solid rgba(229, 213, 125, .4); border-radius: 20px;
+  padding: 6px 16px; display: flex; align-items: center; gap: 8px;
+  z-index: 95; box-shadow: 0 6px 20px rgba(0, 0, 0, .6); pointer-events: none;
+}
+.insurance-waiting-banner .waiting-text {
+  font-size: 12px; color: #e5c97b; font-weight: 600; letter-spacing: .5px;
+}
+.insurance-spin-shield { display: inline-flex; color: #e5c97b; animation: insShieldPulse 1.5s infinite ease-in-out; }
+@keyframes insShieldPulse { 0%, 100% { opacity: .55; transform: scale(.94) } 50% { opacity: 1; transform: scale(1.06) } }

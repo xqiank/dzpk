@@ -1,0 +1,71 @@
+/* 赢家光环：官方 PokerTable winner-sunburst-rays / winner-sparkles / crown
+   来源：PokerTable-DSJpRdmT.css */
+
+.seat .avatar-wrapper { position:relative }
+
+.seat .winner-sunburst-rays {
+  position:absolute; inset:-52px; pointer-events:none; z-index:5; border-radius:50%; overflow:visible;
+  -webkit-mask-image:radial-gradient(circle,rgba(0,0,0,1) 32%,rgba(0,0,0,.85) 45%,rgba(0,0,0,.45) 64%,rgba(0,0,0,.12) 82%,transparent 98%);
+  mask-image:radial-gradient(circle,rgba(0,0,0,1) 32%,rgba(0,0,0,.85) 45%,rgba(0,0,0,.45) 64%,rgba(0,0,0,.12) 82%,transparent 98%);
+}
+.seat .winner-ray-layer {
+  position:absolute; inset:0; border-radius:50%; will-change:transform; transform-origin:50% 50%;
+  background:repeating-conic-gradient(from 0deg,#ffec8252 0deg 8deg,#ffda462e 8deg 9.5deg,#ffd23208 9.5deg 18deg);
+  animation:winnerSunburstSpin 12s linear infinite;
+}
+.seat .winner-sparkles {
+  position:absolute; inset:-16px; border-radius:50%; pointer-events:none; z-index:22;
+  will-change:transform; transform-origin:50% 50%;
+  animation:winnerSparklesOrbit 16s linear infinite;
+}
+.seat .winner-sparkles .sparkle {
+  position:absolute; border-radius:50%;
+  background:radial-gradient(circle,#ffffff 15%,#ffe680 50%,#ffa500 85%,transparent 100%);
+  box-shadow:0 0 5px gold,0 0 10px #ffb900b3; will-change:transform,opacity;
+  animation:winnerSparklePulse 2.2s ease-in-out infinite alternate;
+}
+.seat .winner-sparkles .sparkle.sp-1  { width:8px;height:8px;left:50px;top:8px;animation-delay:0s }
+.seat .winner-sparkles .sparkle.sp-2  { width:5px;height:5px;left:74px;top:14px;animation-delay:.35s }
+.seat .winner-sparkles .sparkle.sp-3  { width:10px;height:10px;left:90px;top:30px;animation-delay:.7s }
+.seat .winner-sparkles .sparkle.sp-4  { width:6px;height:6px;left:96px;top:52px;animation-delay:1.1s }
+.seat .winner-sparkles .sparkle.sp-5  { width:7px;height:7px;left:88px;top:74px;animation-delay:.25s }
+.seat .winner-sparkles .sparkle.sp-6  { width:9px;height:9px;left:72px;top:90px;animation-delay:.85s }
+.seat .winner-sparkles .sparkle.sp-7  { width:6px;height:6px;left:50px;top:96px;animation-delay:1.4s }
+.seat .winner-sparkles .sparkle.sp-8  { width:7px;height:7px;left:28px;top:90px;animation-delay:.5s }
+.seat .winner-sparkles .sparkle.sp-9  { width:5px;height:5px;left:14px;top:74px;animation-delay:.95s }
+.seat .winner-sparkles .sparkle.sp-10 { width:9px;height:9px;left:8px;top:52px;animation-delay:.15s }
+.seat .winner-sparkles .sparkle.sp-11 { width:6px;height:6px;left:14px;top:30px;animation-delay:1.25s }
+.seat .winner-sparkles .sparkle.sp-12 { width:8px;height:8px;left:28px;top:14px;animation-delay:.6s }
+.seat .winner-sparkles .sparkle.sp-13 { width:5px;height:5px;left:82px;top:22px;animation-delay:1.6s }
+.seat .winner-sparkles .sparkle.sp-14 { width:7px;height:7px;left:18px;top:82px;animation-delay:.45s }
+
+.seat .showdown-winner-crown {
+  position:absolute; top:-28px; left:50%; transform:translate(-50%); z-index:30; pointer-events:none;
+  animation:winnerCrownFloat 1.2s ease-in-out infinite alternate;
+}
+.seat .showdown-winner-crown svg { width:26px; height:20px; display:block; filter:drop-shadow(0 2px 6px #000000a6) }
+
+.seat .avatar-wrapper.avatar-winner-active .avatar-box {
+  position:relative; z-index:20; border-color:gold!important;
+  box-shadow:0 0 0 1.5px #ffd700e6,0 0 10px #ffd70080!important;
+  animation:winnerAvatarPulse 1.6s ease-in-out infinite alternate;
+}
+
+/* 官方：非赢家公共牌在摊牌后压暗 */
+.community-board-area.has-showdown-winner .card-slot-placeholder:not(.is-winning-board-card) {
+  opacity:.68; filter:grayscale(.2) brightness(.88); transform:scale(.97);
+  transition:opacity .35s cubic-bezier(.2,.8,.2,1),filter .35s ease,transform .35s ease;
+}
+
+@keyframes winnerSunburstSpin { 0%{transform:rotate(0)} to{transform:rotate(360deg)} }
+@keyframes winnerSparklesOrbit { 0%{transform:rotate(0)} to{transform:rotate(360deg)} }
+@keyframes winnerSparklePulse {
+  0%   { transform:scale(.65) translateY(0); opacity:.3 }
+  50%  { opacity:.95; filter:drop-shadow(0 0 6px #ffd700) }
+  to   { transform:scale(1.15) translateY(-3px); opacity:.7 }
+}
+@keyframes winnerAvatarPulse { 0%{transform:scale(1)} to{transform:scale(1.03)} }
+@keyframes winnerCrownFloat {
+  0%   { transform:translate(-50%) translateY(0) scale(1) }
+  to   { transform:translate(-50%) translateY(-3px) scale(1.08) }
+}

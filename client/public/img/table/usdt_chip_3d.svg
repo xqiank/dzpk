@@ -1,0 +1,34 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 3D Stack Base / Shadow -->
+  <ellipse cx="18" cy="24" rx="14" ry="7" fill="rgba(0,0,0,0.55)"/>
+  <!-- Bottom Stack Layers -->
+  <path d="M4 17 C4 20.8 10.2 24 18 24 C25.8 24 32 20.8 32 17 L32 20 C32 23.8 25.8 27 18 27 C10.2 27 4 23.8 4 20 Z" fill="#005738"/>
+  <!-- Layer 2 Stripes -->
+  <path d="M8 19 L8 22 C10 23 12 23.6 14 24 L14 21 C12 20.6 10 20 8 19 Z" fill="#00e676"/>
+  <path d="M22 21 L22 24 C24 23.6 26 23 28 22 L28 19 C26 20 24 20.6 22 21 Z" fill="#00e676"/>
+  <!-- Top Stack Layer Body -->
+  <path d="M4 13 C4 16.8 10.2 20 18 20 C25.8 20 32 16.8 32 13 L32 17 C32 20.8 25.8 24 18 24 C10.2 24 4 20.8 4 17 Z" fill="#073b26"/>
+  <!-- Layer 1 Stripes -->
+  <path d="M7 14.5 L7 18.5 C9.5 19.8 12 20.4 14.5 20.8 L14.5 16.8 C12 16.4 9.5 15.6 7 14.5 Z" fill="#00e676"/>
+  <path d="M21.5 16.8 L21.5 20.8 C24 20.4 26.5 19.8 29 18.5 L29 14.5 C26.5 15.6 24 16.4 21.5 16.8 Z" fill="#00e676"/>
+  <!-- Top Chip Face (Tilted Ellipse) -->
+  <ellipse cx="18" cy="13" rx="14" ry="7" fill="url(#chipGrad)" stroke="#004d40" stroke-width="0.8"/>
+  <!-- Outer Rim Edge spots on face -->
+  <path d="M7 11.5 C7.5 10 9 8.8 11 8 L12.5 10 C11.5 10.5 10.5 11.2 10 12 Z" fill="#004d40"/>
+  <path d="M25 8 C27 8.8 28.5 10 29 11.5 L26 12 C25.5 11.2 24.5 10.5 23.5 10 Z" fill="#004d40"/>
+  <path d="M15 6.2 C16 6.1 17 6.1 18 6.1 C19 6.1 20 6.1 21 6.2 L20.5 8.2 C19.7 8.1 18.8 8.1 18 8.1 C17.2 8.1 16.3 8.1 15.5 8.2 Z" fill="#004d40"/>
+  <path d="M15 19.8 C16 19.9 17 19.9 18 19.9 C19 19.9 20 19.9 21 19.8 L20.5 17.8 C19.7 17.9 18.8 17.9 18 17.9 C17.2 17.9 16.3 17.9 15.5 17.8 Z" fill="#004d40"/>
+  <!-- Inner Ring on face -->
+  <ellipse cx="18" cy="13" rx="9.5" ry="4.8" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="0.7" stroke-dasharray="2 1"/>
+  <!-- Center Tether USDT Symbol -->
+  <g transform="translate(18, 13) scale(0.65, 0.42)" fill="#003323">
+    <path d="M-7 -6 H7 V-3 H2 V-1 C5 -0.8 7 0.2 7 1.5 C7 2.8 5 3.8 2 4 V7 H-2 V4 C-5 3.8 -7 2.8 -7 1.5 C-7 0.2 -5 -0.8 -2 -1 V-3 H-7 Z M-5 1.5 C-5 2.2 -3.5 2.8 0 2.8 C3.5 2.8 5 2.2 5 1.5 C5 0.8 3.5 0.2 0 0.2 C-3.5 0.2 -5 0.8 -5 1.5 Z" fill="#02261b"/>
+  </g>
+  <defs>
+    <linearGradient id="chipGrad" x1="4" y1="6" x2="32" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#26de81"/>
+      <stop offset="50%" stop-color="#00e676"/>
+      <stop offset="100%" stop-color="#00b894"/>
+    </linearGradient>
+  </defs>
+</svg>

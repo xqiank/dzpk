@@ -1,0 +1,39 @@
+/* 发牌节奏：官方 PokerTable flying-card-item / flyCardKeyframe / flyBoardCardSmooth / cardCrackBurst
+   来源：PokerTable-DSJpRdmT.css */
+
+.td-scope .deal-fly-layer { position:absolute; inset:0; pointer-events:none; z-index:65 }
+
+.td-scope .flying-card-item {
+  position:absolute; left:var(--start-x, 88%); top:var(--start-y, 8%);
+  width:28px; height:41px; opacity:0; pointer-events:none; z-index:65;
+  will-change:transform,opacity; perspective:800px; -webkit-perspective:800px;
+  transform:translate3d(-50%,-50%,0); -webkit-transform:translate3d(-50%,-50%,0);
+  backface-visibility:hidden; -webkit-backface-visibility:hidden;
+  animation:flyCardKeyframe var(--duration,.42s) cubic-bezier(.2,.9,.3,1) both;
+}
+.td-scope .flying-card-item.is-board { animation-name:flyBoardCardSmooth }
+.td-scope .flying-card-img {
+  width:100%; height:100%; object-fit:cover; border-radius:4px;
+  box-shadow:0 6px 14px #000000c4; display:block;
+}
+
+/* 落点翻面（官方 cardCrackBurst 的弹入节奏） */
+.td-scope .card-item.land-pop { animation:cardCrackBurst .18s cubic-bezier(.16,1,.3,1) both }
+.td-scope .hero-card-slot.land-pop { animation:cardCrackBurst .18s cubic-bezier(.16,1,.3,1) both }
+.board-slots.flipping .card-item { animation:cardCrackBurst .18s cubic-bezier(.16,1,.3,1) both }
+
+@keyframes flyCardKeyframe {
+  0%   { transform:translate3d(-50%,-50%,0) rotate(var(--start-rot,0deg)) scale(var(--scale-start,.5)); opacity:0 }
+  3%   { opacity:1 }
+  to   { transform:translate3d(calc(var(--flight-dx) - 50%),calc(var(--flight-dy) - 50%),0) rotate(var(--target-rot,0deg)) scale(1); opacity:1 }
+}
+@keyframes flyBoardCardSmooth {
+  0%   { transform:translate3d(-50%,-50%,0) rotate(var(--start-rot,-10deg)) scale(.68); opacity:0 }
+  3%   { opacity:1 }
+  to   { transform:translate3d(calc(var(--flight-dx) - 50%),calc(var(--flight-dy) - 50%),0) rotate(0) scale(1); opacity:1 }
+}
+@keyframes cardCrackBurst {
+  0%   { opacity:0; transform:scale(.92) }
+  55%  { opacity:1; transform:scale(1.02) translate(-.8px,.6px) }
+  to   { opacity:.96; transform:scale(1) translate(0,0) }
+}

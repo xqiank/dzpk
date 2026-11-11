@@ -1,0 +1,23 @@
+{
+  "name": "u5-poker-client",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 8721",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 8721"
+  },
+  "dependencies": {
+    "pinia": "^2.2.6",
+    "qrcode-generator": "^1.4.4",
+    "vue": "^3.5.13",
+    "vue-router": "^4.4.5"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vue-tsc": "^2.1.10"
+  }
+}

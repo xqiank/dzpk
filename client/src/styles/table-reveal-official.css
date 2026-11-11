@@ -1,0 +1,35 @@
+/* 摊牌亮牌：官方 PokerTable flying-opponent-fan / flyOpponentFanAnim / is-winning-board-card
+   来源：PokerTable-DSJpRdmT.css */
+
+.tr-scope .reveal-fan-layer { position:absolute; inset:0; pointer-events:none; z-index:68 }
+
+.tr-scope .flying-opponent-fan {
+  position:absolute; left:var(--start-x); top:var(--start-y);
+  display:flex; pointer-events:none; z-index:68; width:37px; height:35px;
+  will-change:transform,opacity;
+  animation:flyOpponentFanAnim var(--duration,.42s) cubic-bezier(.18,.88,.28,1) both;
+}
+.tr-scope .flying-opponent-fan .fan-card {
+  width:26px; height:35px; border-radius:4px; overflow:hidden;
+  box-shadow:0 4px 10px #000000a6; background:#0f3327;
+}
+.tr-scope .flying-opponent-fan .fan-card + .fan-card { margin-left:-15px; transform:rotate(6deg) }
+
+/* 官方赢家公共牌：金边 + 1.4s 呼吸 */
+.is-winning-board-card,
+.card-item.is-winning-board-card {
+  transform:translateY(-10px) scale(1.1)!important;
+  box-shadow:0 8px 20px #0009, 0 0 12px 2px #ffd700b3, inset 0 0 4px #ffffff80!important;
+  border:2px solid #ffd700!important; border-radius:5px; z-index:25;
+  animation:winningCardGoldenPulse 1.4s ease-in-out infinite alternate !important;
+}
+
+@keyframes flyOpponentFanAnim {
+  0%   { transform:translate(-50%,-50%) scale(.55) rotate(-15deg); opacity:0 }
+  8%   { opacity:1 }
+  to   { transform:translate3d(calc(var(--flight-dx) - 50% + 24.5px),calc(var(--flight-dy) - 50% + 18.5px),0) scale(1) rotate(0); opacity:1 }
+}
+@keyframes winningCardGoldenPulse {
+  0%   { filter:drop-shadow(0 0 5px rgba(255,215,0,.6)); transform:translateY(-9px) scale(1.1) }
+  to   { filter:drop-shadow(0 0 10px rgba(255,195,0,.85)); transform:translateY(-11px) scale(1.12) }
+}
