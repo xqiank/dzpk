@@ -21,10 +21,9 @@
 5. 玩家可以创建好友局或私人房，进入 2 至 9 人实时牌桌。
 
 ## 产品截图与玩法说明
-![现金场](png/现金场.png)  
-![桌面](png/桌面.png) 
-![Jackpot](png/Jackpot.png) 
-![个人中心](png/个人中心.png) 
+![现金场](Screencut/现金场.png)  ![桌面](Screencut/桌面.png) 
+![Jackpot](Screencut/Jackpot.png) 
+![个人中心](Screencut/个人中心.png) 
 
 ## 联系方式
 
